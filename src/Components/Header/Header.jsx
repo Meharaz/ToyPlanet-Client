@@ -1,28 +1,38 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo main.png'
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch((error) => console.log(error))
+    }
 
     const navItems = <>
         <li className=' text-orange-300 font-semibold hover:bg-orange-400  hover: rounded-2xl '>
             <Link to='/'>Home</Link>
-            </li>
+        </li>
         <li className='text-orange-300 font-semibold hover:bg-orange-300 hover: rounded-2xl'>
             <Link to='/allToys'>All Toys</Link>
-            </li>
+        </li>
         <>
-            <li className='text-orange-300 font-semibold hover:bg-orange-300 hover: rounded-2xl'>
+            {user ? 
+                <li className='text-orange-300 font-semibold hover:bg-orange-300 hover: rounded-2xl'>
                 <Link to='/myToys'>My Toys</Link>
-                </li>
+            </li>
+            : 
             <li className='text-orange-300 font-semibold hover:bg-orange-300 hover: rounded-2xl'>
                 <Link to='/addToy'>Add Toys</Link>
-                </li>
+            </li>
+            }
         </>
 
         <li className='text-orange-300 font-semibold hover:bg-orange-300 hover: rounded-2xl'>
             <Link to='/blog'>Blogs</Link>
-            </li>
+        </li>
     </>
 
     return (
@@ -47,12 +57,17 @@ const Header = () => {
             </div>
             <div className="navbar-end">
 
-                <Link className="btn bg-orange-300 border-0 hover:btn-info hover:text-white">LogOut</Link>
+                {user ?
+                    <Link className="btn bg-orange-300 border-0 hover:btn-info hover:text-white" onClick={handleLogOut}>LogOut</Link>
+                    :
+                    <Link className="btn bg-orange-300 border-0 hover:btn-info hover:text-white" to="/login">Login</Link>
+                }
 
-                <Link className="btn bg-orange-300 border-0 hover:btn-info hover:text-white" to="/login">Login</Link>
-
-
-                <img className='h-10 ms-2 rounded-full' src='#' alt="" />
+                {user ?
+                    <img className='h-10 ms-2 rounded-full' src={user?.photoURL} alt="" />
+                    :
+                    ''
+                }
 
             </div>
         </div>
