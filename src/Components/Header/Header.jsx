@@ -19,14 +19,14 @@ const Header = () => {
             <Link to='/allToys'>All Toys</Link>
         </li>
         <>
-            {user ? 
+            {user ?
                 <li className='text-orange-300 font-semibold hover:bg-orange-300 hover: rounded-2xl'>
-                <Link to='/myToys'>My Toys</Link>
-            </li>
-            : 
-            <li className='text-orange-300 font-semibold hover:bg-orange-300 hover: rounded-2xl'>
-                <Link to='/addToy'>Add Toys</Link>
-            </li>
+                    <Link to='/myToys'>My Toys</Link>
+                </li>
+                :
+                <li className='text-orange-300 font-semibold hover:bg-orange-300 hover: rounded-2xl'>
+                    <Link to='/addToy'>Add Toys</Link>
+                </li>
             }
         </>
 
@@ -56,6 +56,13 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
+                {user ?
+                    <div className="tooltip tooltip-bottom me-4 " data-tip={user?.displayName} >
+                        <img className='h-10 ms-2 rounded-full' src={user?.photoURL} alt="" />
+                    </div>
+                    :
+                    ''
+                }
 
                 {user ?
                     <Link className="btn bg-orange-300 border-0 hover:btn-info hover:text-white" onClick={handleLogOut}>LogOut</Link>
@@ -63,11 +70,7 @@ const Header = () => {
                     <Link className="btn bg-orange-300 border-0 hover:btn-info hover:text-white" to="/login">Login</Link>
                 }
 
-                {user ?
-                    <img className='h-10 ms-2 rounded-full' src={user?.photoURL} alt="" />
-                    :
-                    ''
-                }
+
 
             </div>
         </div>
