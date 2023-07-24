@@ -96,6 +96,7 @@ const ToyGallery = () => {
      ];
     return (
         <div>
+         <p className='text-center font-bold text-3xl p-10 pt-0'> Toy Gallery</p>
             <Gallery images={images} />
         </div>
     );

@@ -60,7 +60,7 @@ const AddToys = () => {
                         <div className="form-control">
                             <label className="input-group input-group-vertical mb-5  ">
                                 <span>Category</span> 
-                                <input type="text" placeholder="Outdoor or Indoor" required name='category' className="input input-bordered" />
+                                <input type="text" placeholder="Outdoor or Indoor or Kids" required name='category' className="input input-bordered" />
                             </label>
                         </div>
                         <div className="form-control">
