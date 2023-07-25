@@ -35,7 +35,10 @@ const Category = () => {
     }
     return (
         <div>
-            <h1 className='text-center font-extrabold text-3xl p-10 text-red-500' >Toys By Category</h1>
+            <h1 className='text-center font-extrabold text-3xl p-10 text-red-500' >
+            <h1 className='text-5xl font-extrabold p-4 text-center'><span className="animate-text bg-gradient-to-r ml-1 from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent  font-black">
+                           Toys By Category
+                        </span></h1></h1>
             <div className=' d-flex justify-center items-center text-center w-full font-bold '>
                 <p onClick={() => handleTab('All')} className={`tab text-xl text- All ${active == 'All' ? 'bg-orange-300  rounded-2xl text-white' : ""}`}>All</p>
                 <p onClick={() => handleTab('Outdoor')} className={`tab text-xl Outdoor ${active == 'Outdoor' ? 'bg-orange-300  rounded-2xl text-white' : ""}`}>Outdoor</p>

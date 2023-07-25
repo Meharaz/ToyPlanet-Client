@@ -96,7 +96,9 @@ const ToyGallery = () => {
      ];
     return (
         <div>
-         <p className='text-center font-bold text-3xl p-10 pt-0'> Toy Gallery</p>
+         <p className='text-center font-bold text-3xl p-10 pt-0'> <h1 className='text-5xl font-extrabold p-4 text-center'><span className="animate-text bg-gradient-to-r ml-1 from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent  font-black">
+                           Toy Gallery
+                        </span></h1></p>
             <Gallery images={images} />
         </div>
     );

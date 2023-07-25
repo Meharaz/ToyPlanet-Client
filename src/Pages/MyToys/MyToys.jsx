@@ -99,7 +99,9 @@ const MyToys = () => {
     };
     return (
         <div className='p-4 mt-10'>
-            <h1 className='text-3xl font-extrabold p-4 text-center'>My Toys</h1>
+            <h1 className='text-3xl font-extrabold p-4 text-center'><span className="animate-text bg-gradient-to-r ml-1 from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent  font-black">
+                            My Toys
+                        </span></h1>
             <table className="w-full border rounded-xl">
                 <thead >
                     <tr>

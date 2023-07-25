@@ -54,32 +54,38 @@ const Banner = () => {
             </div> */}
 
             <div ref={sliderRef} className="keen-slider">
-                <div className="keen-slider__slide number-slide1"><div className="hero min-h-screen bg-base-200">
-                    <div className="hero-content flex-col lg:flex-row">
-                        <img className='rounded-2xl' src="https://i.ibb.co/frpZp4z/318669-1-600.webp" />
-                        <div>
-                            <h1 className="text-5xl font-bold">Outdoor Play!</h1>
-                            <p className="py-6">More outdoor time is linked with improved motor development and lower obesity rates and myopia (nearsightedness) risk. </p>
-                            <button className="btn btn-primary">
-                                Outdoor Toys <FaArrowRight />
-                            </button>
+                <div className="keen-slider__slide number-slide1">
+                    <div className="hero min-h-screen bg-base-200">
+                        <div className="hero-content flex-col lg:flex-row">
+                            <img className='rounded-2xl' src="https://i.ibb.co/frpZp4z/318669-1-600.webp" />
+                            <div>
+                                <h1 className='text-5xl font-extrabold p-4 '><span className="animate-text bg-gradient-to-r ml-1 from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent  font-black">
+                                    Outdoor Play
+                                </span></h1>
+                                <p className="py-6 ">More outdoor time is linked with improved motor development and lower obesity rates and myopia (nearsightedness) risk. </p>
+                                <button className="btn btn-primary">
+                                    Outdoor Toys <FaArrowRight />
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                </div>
-                <div className="keen-slider__slide number-slide2"><div className="hero min-h-screen bg-base-200">
-                    <div className="hero-content flex-col lg:flex-row">
-                        <img className='rounded-2xl lg:h-full lg:w-2/4 md:w-full md:h-full sm:w-1/2 sm:h-2/4' src="https://i.ibb.co/2tRPvk9/Organizing-Indoor-Play-Area.png" />
-                        <div>
-                            <h1 className="text-5xl font-bold">Indoor Play!</h1>
-                            <p className="py-6">It helps build coordination and balance also kids can build their communication skills by interacting with other kids.</p>
-                            <button className="btn btn-primary">
-                                Indoor Toys <FaArrowRight />
-                            </button>
+                <div className="keen-slider__slide number-slide2">
+                    <div className="hero min-h-screen bg-base-200">
+                        <div className="hero-content flex-col lg:flex-row">
+                            <img className='rounded-2xl lg:h-full lg:w-2/4 md:w-full md:h-full sm:w-1/2 sm:h-2/4' src="https://i.ibb.co/2tRPvk9/Organizing-Indoor-Play-Area.png" />
+                            <div>
+                                <h1 className="text-5xl font-bold"><h1 className='text-5xl font-extrabold p-4 '><span className="animate-text bg-gradient-to-r ml-1 from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent  font-black">
+                                    Indoor Play
+                                </span></h1></h1>
+                                <p className="py-6">It helps build coordination and balance also kids can build their communication skills by interacting with other kids.</p>
+                                <button className="btn btn-primary">
+                                    Indoor Toys <FaArrowRight />
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                </div>                                
             </div>
 
             {/* <div className="carousel w-full h-96">
