@@ -58,7 +58,7 @@ const AllToys = () => {
           <tr>
             <th className="border px-4 py-2">Seller</th>
             <th className="border px-4 py-2">Toy Name</th>
-            <th className="border px-4 py-2">Sub-category</th>
+            <th className="border px-4 py-2">Sub category</th>
             <th className="border px-4 py-2">Price</th>
             <th className="border px-4 py-2">Available Quantity</th>
             <th className="border px-4 py-2">Actions</th>
