@@ -2,8 +2,10 @@ import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import useTitle from '../../UseTitle/UseTitle';
 
 const MyToys = () => {
+    useTitle('My Toys')
     const { user } = useContext(AuthContext);
     const [toys, setToys] = useState([]);
     const [showModal, setShowModal] = useState(false);

@@ -4,8 +4,10 @@ import { AuthContext } from '../../Providers/AuthProvider';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
 import { FaGoogle } from 'react-icons/fa';
+import useTitle from '../../UseTitle/UseTitle';
 
 const Login = () => {
+    useTitle('Login')
     const [error, setError] = useState();
     const auth = getAuth(app);
     const googleProvider = new GoogleAuthProvider();

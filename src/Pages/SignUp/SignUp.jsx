@@ -2,10 +2,12 @@ import { useContext, useState } from "react";
 import { Link, useNavigate, useNavigation } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { getAuth, updateProfile } from "firebase/auth";
+import useTitle from "../../UseTitle/UseTitle";
 
 const auth = getAuth();
 
 const SignUp = () => {
+    useTitle('Sign Up')
     const { createUser, setUser, logOut } = useContext(AuthContext);
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
