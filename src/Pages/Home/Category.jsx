@@ -13,7 +13,7 @@ const Category = () => {
     const [active, setActive] = useState('All');
 
     useEffect(() => {
-        fetch(`http://localhost:5000/toyCategory/${active}`)
+        fetch(`https://toy-planet-server-sand.vercel.app/toyCategory/${active}`)
             .then(res => res.json())
             .then(data => setToyCategory(data))
     }, [active])

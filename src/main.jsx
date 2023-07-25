@@ -59,7 +59,7 @@ const router = createBrowserRouter([
             <ToyDetails />
           </PrivateRoute>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/singleToy/${params.id}`)
+        loader: ({ params }) => fetch(`https://toy-planet-server-sand.vercel.app/singleToy/${params.id}`)
       },
     ]
   },

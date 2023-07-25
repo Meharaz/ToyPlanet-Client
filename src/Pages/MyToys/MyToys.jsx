@@ -17,7 +17,7 @@ const MyToys = () => {
     const updateToy = {};
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myToys/${user.displayName}`)
+        fetch(`https://toy-planet-server-sand.vercel.app/myToys/${user.displayName}`)
             .then((res) => res.json())
             .then((result) => setToys(result));
     }, [user.displayName, control]);
@@ -44,7 +44,7 @@ const MyToys = () => {
         updateToy.quantity = updatedQuantity;
         updateToy.description = updatedDescription;
 
-        fetch(`http://localhost:5000/updateToy/${updateToy._id}`, {
+        fetch(`https://toy-planet-server-sand.vercel.app/updateToy/${updateToy._id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",
@@ -77,7 +77,7 @@ const MyToys = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 fetch(
-                    `http://localhost:5000/deleteToy/${_id}`,
+                    `https://toy-planet-server-sand.vercel.app/deleteToy/${_id}`,
                     {
                         method: "DELETE",
                     }

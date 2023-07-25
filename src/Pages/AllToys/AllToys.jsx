@@ -9,14 +9,14 @@ const AllToys = () => {
     const [search, setSearch] = useState('');
     const navigate = useNavigate();
     useEffect(() => {
-        fetch("http://localhost:5000/allToys/")
+        fetch("https://toy-planet-server-sand.vercel.app/allToys/")
             .then((res) => res.json())
             .then((result) => setToys(result));
 
     }, []);
 
     const handleToySearch = () => {
-        fetch(`http://localhost:5000/searchToy/${search}`)
+        fetch(`https://toy-planet-server-sand.vercel.app/searchToy/${search}`)
             .then((res) => res.json())
             .then((result) => setToys(result));
 

@@ -25,7 +25,7 @@ const AddToys = () => {
         }
         console.log(addToy);
         
-        fetch('http://localhost:5000/toys', {
+        fetch('https://toy-planet-server-sand.vercel.app/toys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
