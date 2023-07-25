@@ -1,9 +1,15 @@
-import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
+import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import app from '../../firebase/firebase.config';
+import { FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
     const [error, setError] = useState();
+    const auth = getAuth(app);
+    const googleProvider = new GoogleAuthProvider();
+    const navigate = useNavigate()
 
     const { signIn } = useContext(AuthContext);
     const handleLogin = event => {
@@ -15,11 +21,24 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
+                navigate('/')
                 console.log(user);
             })
             .catch(error => {
                 setError(error.message)
             })
+    }
+    const handleGoogleSignUp = () => {
+        signInWithPopup(auth, googleProvider)
+            .then((result) => {
+                const user = result.user;
+                navigate('/');
+                console.log(user);
+            })
+            .catch((error) => {
+                setError("Don't Worry!!")
+            })
+       
     }
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -50,6 +69,7 @@ const Login = () => {
                                 <button className="btn btn-primary">Login</button>
                             </div>
                             <p className='my-4 text-center font-semibold'>New to Toy-Planet? <Link to='/signup' className='text-orange-500 font-bold'>Sign Up</Link></p>
+                            <p className='btn btn-outline' onClick={handleGoogleSignUp}><FaGoogle/></p>
                         </div>
                     </div>
                 </div>
