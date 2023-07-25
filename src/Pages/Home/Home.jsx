@@ -6,12 +6,13 @@ import ExtraSection from './ExtraSection';
 import Review from './Review';
 
 const Home = () => {
+ 
     return (
         <div>
           
             <Banner/>
             <Review/>
-            <ToyGallery/>
+            <ToyGallery />
             <Category/>
             <ExtraSection/>
             

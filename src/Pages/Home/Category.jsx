@@ -1,9 +1,13 @@
-import  { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider'
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Aos from 'aos';
 
 const Category = () => {
+    AOS.init();
     const [toyCategory, setToyCategory] = useState([]);
     const { user } = useContext(AuthContext);
     const [active, setActive] = useState('All');
@@ -31,7 +35,7 @@ const Category = () => {
     }
     return (
         <div>
-            <h1 className='text-center font-extrabold text-3xl p-10 text-red-500'>Toys By Category</h1>
+            <h1 className='text-center font-extrabold text-3xl p-10 text-red-500' >Toys By Category</h1>
             <div className=' d-flex justify-center items-center text-center w-full font-bold '>
                 <p onClick={() => handleTab('All')} className={`tab text-xl text- All ${active == 'All' ? 'bg-orange-300  rounded-2xl text-white' : ""}`}>All</p>
                 <p onClick={() => handleTab('Outdoor')} className={`tab text-xl Outdoor ${active == 'Outdoor' ? 'bg-orange-300  rounded-2xl text-white' : ""}`}>Outdoor</p>
@@ -39,11 +43,13 @@ const Category = () => {
                 <p onClick={() => handleTab('Kids')} className={`tab text-xl Kids ${active == 'Kids' ? 'bg-orange-300 rounded-2xl text-white' : ""}`}>Kids</p>
 
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 ' >
                 {
                     toyCategory.map(category =>
                         <>
-                            <div className="card w-full bg-base-100 shadow-xl">
+                            <div className="card w-full bg-base-100 shadow-xl" data-aos="flip-left"
+                                data-aos-duration="600"
+                                data-aos-offset="200" >
                                 <figure>
                                     <img src={category.photoURL} alt="Toys" />
                                 </figure>
