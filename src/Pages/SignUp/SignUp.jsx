@@ -2,10 +2,12 @@ import { useContext, useState } from "react";
 import { Link, useNavigate, useNavigation } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { getAuth, updateProfile } from "firebase/auth";
+import useTitle from "../../UseTitle/UseTitle";
 
 const auth = getAuth();
 
 const SignUp = () => {
+    useTitle('Signup')
     const { createUser, setUser, logOut } = useContext(AuthContext);
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
@@ -42,7 +44,7 @@ const SignUp = () => {
                 navigate("/");
                 // setSuccess("Account created successfully");
                 // setError("");
-                
+
             })
             .catch((error) => {
                 setError(error.message);
