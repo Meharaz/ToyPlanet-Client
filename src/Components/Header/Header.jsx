@@ -70,7 +70,7 @@ const Header = () => {
                 }
 
                 {user ?
-                    <Link className="btn bg-orange-300 border-0 hover:btn-info hover:text-white" onClick={handleLogOut}>LogOut</Link>
+                    <Link className="btn bg-orange-300 border-0 hover:btn-info hover:text-white" onClick={logOut}>LogOut</Link>
                     :
                     <Link className="btn bg-orange-300 border-0 hover:btn-info hover:text-white" to="/login">Login</Link>
                 }

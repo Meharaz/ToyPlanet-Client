@@ -2,12 +2,10 @@ import { useContext, useState } from "react";
 import { Link, useNavigate, useNavigation } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { getAuth, updateProfile } from "firebase/auth";
-import useTitle from "../../UseTitle/UseTitle";
 
 const auth = getAuth();
 
 const SignUp = () => {
-    useTitle('Sign Up')
     const { createUser, setUser, logOut } = useContext(AuthContext);
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
@@ -32,20 +30,19 @@ const SignUp = () => {
             return;
         }
         createUser(email, password)
-            .then(result => {
-                const user = result.user;
+            .then(res => {
+                const user = res.user;
                 // console.log(user)
+                setUser(user);
+                form.reset();
                 updateProfile(auth.currentUser, { displayName: name, photoURL: photo })
                     .then(() => { })
                     .catch(() => { })
-                setUser(user);
-                logOut()
-                    .then(() => { })
-                    .catch(() => { });
-                navigate("/login");
-                setSuccess("Account created successfully");
-                setError("");
-                form.reset("");
+                // logOut();
+                navigate("/");
+                // setSuccess("Account created successfully");
+                // setError("");
+                
             })
             .catch((error) => {
                 setError(error.message);
@@ -68,9 +65,7 @@ const SignUp = () => {
                     <form onSubmit={handleSignUP}>
                         <div className="hero-content flex-col lg:flex-row-reverse">
                             <div className="text-center lg:text-left">
-                            <h1 className='text-5xl font-extrabold p-4 text-center'><span className="animate-text bg-gradient-to-r ml-1 from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent  font-black">
-                           Sign Up Now
-                        </span></h1>
+                                <h1 className="text-5xl font-bold">Sign Up now!</h1>
                             </div>
                             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                                 <div className="card-body">

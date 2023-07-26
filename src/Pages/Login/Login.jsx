@@ -8,12 +8,12 @@ import useTitle from '../../UseTitle/UseTitle';
 
 const Login = () => {
     useTitle('Login')
-    const [error, setError] = useState();
+    const [error,  setError] = useState();
     const auth = getAuth(app);
     const googleProvider = new GoogleAuthProvider();
     const navigate = useNavigate()
 
-    const { signIn } = useContext(AuthContext);
+    const { signIn, setUser} = useContext(AuthContext);
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -23,8 +23,9 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
+                setUser(user);
                 navigate('/')
-                console.log(user);
+                // console.log(user);
             })
             .catch(error => {
                 setError(error.message)
@@ -35,7 +36,7 @@ const Login = () => {
             .then((result) => {
                 const user = result.user;
                 navigate('/');
-                console.log(user);
+                // console.log(user);
             })
             .catch((error) => {
                 setError("Don't Worry!!")
