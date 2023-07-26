@@ -56,7 +56,7 @@ const Blogs = () => {
                 </div>
                 <div>
                     <h2 className="text-lg font-bold">
-                        ** What is   <span className="animate-text bg-gradient-to-r ml-1 from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent text-lg font-black">
+                        4. What is   <span className="animate-text bg-gradient-to-r ml-1 from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent text-lg font-black">
                             MongoDB aggregate
                         </span> &  <span className="animate-text bg-gradient-to-r ml-1 from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent text-lg font-black">
                             how does it work ?
